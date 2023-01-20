@@ -31,6 +31,37 @@ class M_invoice extends CI_Model{
         return $return = 200;
     }
 
+    public function edit($params)
+    {
+        $return['status']  = 0;
+        $return['message'] = '';
+
+        $data['nama_pengirim'] = $params['nama_pengirim'];
+        $data['alamat_pengirim'] = $params['alamat_pengirim'];
+        $data['nama_penerima'] = $params['nama_penerima'];
+        $data['alamat_penerima'] = $params['alamat_penerima'];
+        $data['keterangan'] = $params['keterangan'];
+        $data['tanggal'] = $params['tanggal'];
+        $data['tempo'] = $params['tempo'];
+        
+        $this->db->trans_start();
+        $this->db->where('n_invoice', $params['n_invoice']);
+        $this->db->update('h_invoice', $data);        
+        
+        if ($this->db->trans_status() === false) {
+            $this->db->trans_rollback();
+            $return['status']  = 500;
+            $return['message'] = 'Data gagal diedit';
+        } else {
+            $this->db->trans_commit();
+            $return['status']  = 201;
+            $return['message'] = 'Data berhasil diedit';
+        }
+        $this->db->trans_complete();
+
+        return $return;
+    }
+
     public function simpan($params)
     {
         $return['status']  = 0;

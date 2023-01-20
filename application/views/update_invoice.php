@@ -11,6 +11,7 @@
 				<div class="col-sm-6">
 					<div class="form-group">
 						<label for="">Name from</label>
+                        <input type="hidden" name="n_invoice" value="<?= $invoice['n_invoice'] ?>">
 						<input type="text" name="nama_pengirim" value="<?= $invoice['nama_pengirim'] ?>" class="form-control">
 					</div><br>
                     <div class="form-group">
@@ -115,7 +116,7 @@
                 </div>
             </div><hr>
             <center>
-                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="submit" class="btn btn-primary">Update</button>
             </center>
 		</form>
 	</div>
@@ -260,7 +261,7 @@ function formatRupiah(angka, prefix) {
                     $.ajax({
                         type: 'ajax',
                         method: 'POST',
-                        url: site_url + 'invoice/simpan',
+                        url: site_url + 'invoice/update',
                         data: $(this).serialize(),
                         dataType: 'json',
                         success: function (response) {

@@ -40,6 +40,15 @@ class Invoice extends CI_Controller{
         $this->load->view('template/footer');
     }
 
+    public function update()
+    {
+        $params = $this->input->post();
+
+        $result = $this->invoice->edit($params);
+
+        responseJson($result['status'], $result);
+    }
+
     public function simpan()
     {
         $params = $this->input->post(null, true);
