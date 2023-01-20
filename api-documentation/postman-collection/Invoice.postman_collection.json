@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "3df3fed2-82db-43a8-9169-6b72f1ee84a8",
+		"name": "Invoice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23725722"
+	},
+	"item": [
+		{
+			"name": "Get Item",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/test-software-engineer/api/Item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"test-software-engineer",
+						"api",
+						"Item"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Detail Invoice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/test-software-engineer/api/invoice?id=INV00000003",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"test-software-engineer",
+						"api",
+						"invoice"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "INV00000003"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Data Invoice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/test-software-engineer/api/invoice/data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"test-software-engineer",
+						"api",
+						"invoice",
+						"data"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
