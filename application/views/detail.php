@@ -13,10 +13,10 @@
 
 <main>
     <div class="container-fluid px-4">
-		<h3 class="mt-4">Form Invoice</h3>
+		<h3 class="mt-4">Data Detail Invoice</h3>
 		<ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="<?= site_url('invoice')?>">invoice</a></li>
-			<li class="breadcrumb-item active">Detail</li>
+            <li class="breadcrumb-item"><a href="<?= site_url('invoice')?>">Invoice</a></li>
+			<li class="breadcrumb-item active">Data Detail Invoice</li>
 		</ol>
 
         <div class="card">

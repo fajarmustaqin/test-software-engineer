@@ -2,7 +2,7 @@
     <div class="container-fluid px-4">
         <h3 class="mt-4">Invoice</h3>
 		<ol class="breadcrumb mb-4">
-			<li class="breadcrumb-item active">invoice</li>
+			<li class="breadcrumb-item active">Invoice</li>
 		</ol>
 
         <div class="card">

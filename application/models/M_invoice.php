@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_invoice extends CI_Model{
 
-    public function get_invoice()
+    public function getInvoice()
     {
         $this->db->select('*');
         $data = $this->db->get('h_invoice')->result();
@@ -12,7 +12,7 @@ class M_invoice extends CI_Model{
         return $data;
     }
 
-    public function get_items()
+    public function getItems()
     {
         $this->db->select('id, tipe_item, deskripsi, harga');
         $data = $this->db->get('ref_item')->result();

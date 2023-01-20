@@ -12,10 +12,8 @@ class Invoice extends CI_Controller{
     public function index()
     {
         $data['title'] = 'Data invoice';
+        $data['invoice'] = $this->invoice->getInvoice();
 
-        $data['invoice'] = $this->invoice->get_invoice();
-
-        // var_dump($data['invoice']);die;
         $this->load->view('template/header', $data);
         $this->load->view('invoice', $data);
         $this->load->view('template/footer');
@@ -25,7 +23,8 @@ class Invoice extends CI_Controller{
     {
         $data['title'] = 'Add invoice';
         $data['tanggal'] = date('Y-m-d');
-        $data['items'] = $this->invoice->get_items();
+        $data['items'] = $this->invoice->getItems();
+
         $this->load->view('template/header', $data);
         $this->load->view('form_invoice', $data);
         $this->load->view('template/footer');
@@ -35,6 +34,7 @@ class Invoice extends CI_Controller{
     {
         $data['title'] = 'Update Invoice';
         $data['invoice'] = $this->invoice->getDataInvoice($id);
+
         $this->load->view('template/header', $data);
         $this->load->view('update_invoice', $data);
         $this->load->view('template/footer');
@@ -52,10 +52,7 @@ class Invoice extends CI_Controller{
     public function simpan()
     {
         $params = $this->input->post(null, true);
-        // var_dump($params);die;
-
         $result = $this->invoice->simpan($params);
-
 
         responseJson($result['status'], $result);
     }
@@ -76,10 +73,7 @@ class Invoice extends CI_Controller{
     public function hapus()
     {
         $input = $this->input->post();
-
-        // var_dump($input['n_invoice']);die;
         $result = $this->invoice->hapus($input['n_invoice']);
-        
         
         if($result == 200){
             return successResponseJson('Proses berhasil');
